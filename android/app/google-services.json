@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "668885427463",
+    "project_id": "pet-adoption-ffaaa",
+    "storage_bucket": "pet-adoption-ffaaa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668885427463:android:8ac7613bd09556619f51a2",
+        "android_client_info": {
+          "package_name": "com.example.pet_adoption"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZP_0DdPvFcaSMsEKAs3N2M21uyRDxnSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
