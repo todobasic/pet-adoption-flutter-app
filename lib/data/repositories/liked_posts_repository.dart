@@ -11,15 +11,16 @@ class LikedPostsRepository {
       _similarityRepository = similarityRepository ?? SimilarityRepository();
 
   Future<void> likePost(String userId, String postId) async {
-    final userLikesRef = _firestore
-        .collection('user_likes')
-        .doc(userId)
-        .collection('liked_posts')
-        .doc(postId);
+    final userLikesDocRef = _firestore.collection('user_likes').doc(userId);
+
+    // Create or update the user_likes document
+    await userLikesDocRef.set({'exists': true}, SetOptions(merge: true));
+
+    final userLikesRef = userLikesDocRef.collection('liked_posts').doc(postId);
 
     await userLikesRef.set({
       'likedAt': FieldValue.serverTimestamp(),
-      'postId' : postId,
+      'postId': postId,
     });
 
     final petPostsSnapshot = await _firestore.collection('pet_posts').get();

@@ -16,7 +16,7 @@ class RecommendationsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recommended for you'),
+        title: const Text('Content Based Method'),
       ),
       drawer: const CustomDrawer(),
       body: likedPostsAsyncValue.when(

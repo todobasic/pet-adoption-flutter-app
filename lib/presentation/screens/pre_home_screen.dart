@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pet_adoption/presentation/providers/ui_state_providers.dart';
+import 'package:pet_adoption/presentation/screens/collaborative_filtering_screen.dart';
 import 'package:pet_adoption/presentation/screens/home_screen.dart';
 import 'package:pet_adoption/presentation/screens/recommendations_screen.dart';
 
@@ -18,6 +19,7 @@ class PreHomeScreenState extends ConsumerState<PreHomeScreen> {
     final List<Widget> screens = [
       const HomeScreen(),
       const RecommendationsScreen(),
+      const CollaborativeFilteringScreen(),
     ];
 
     final indexBottomNavbar = ref.watch(indexBottomNavbarProvider);
@@ -36,7 +38,11 @@ class PreHomeScreenState extends ConsumerState<PreHomeScreen> {
               BottomNavigationBarItem(
                 icon: Icon(Icons.recommend),
                 label: 'Recommended'
-              )
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.group),
+                label: 'Collaborative'
+              ),
             ],
           ),
         body: screens[indexBottomNavbar],
